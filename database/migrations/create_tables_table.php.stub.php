@@ -8,9 +8,30 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('tables', function (Blueprint $table) {
+
+        Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->uuid();
+            $table->text('title');
+            $table->timestamps();
+        });
+
+        Schema::create('contacts', function (Blueprint $table) {
+            $table->id();
+            $table->uuid();
+            $table->morphs('contactable'); // user
+            $table->text('message');
+            $table->timestamp('read_at');
+            $table->timestamps();
+        });
+
+        Schema::create('messages', function (Blueprint $table) {
+            $table->id();
+            $table->uuid();
+            // $table->morphs('messageable'); from
+            // $table->foreignId('contact_id'); to
+            $table->text('message');
+            $table->timestamp('read_at');
             $table->timestamps();
         });
     }

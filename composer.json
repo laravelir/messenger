@@ -1,14 +1,13 @@
 {
-    "name": "miladimos/package-skeleton",
-    "description": "test description",
-    "homepage": "https://github.com/miladimos/package-skeleton",
+    "name": "laravelir/messenger",
+    "description": "a headless realtime messenger in laravel",
+    "homepage": "https://github.com/laravelir/messenger",
     "type": "library",
     "version": "0.1.0",
     "keywords": [
         "laravel",
         "laravel-package",
         "laravel support",
-        "lumen packages",
         "laravel packages"
     ],
     "authors": [
@@ -21,7 +20,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Vendor\\Package\\": "src/"
+            "Laravelir\\Messenger\\": "src/"
         },
         "files": [
             "./src/helpers.php"
@@ -29,16 +28,16 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Vendor\\Package\\Tests\\": "tests"
+            "Laravelir\\Messenger\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Package\\Package\\Providers\\PackageServiceProvider"
+                "Messenger\\Messenger\\Providers\\MessengerServiceProvider"
             ],
             "aliases": {
-                "Package": "Vendor\\Package\\Facades\\Package"
+                "Messenger": "Laravelir\\Messenger\\Facades\\Messenger"
             }
         }
     },
